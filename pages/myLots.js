@@ -10,7 +10,7 @@ const MyLots = ({ path, lots }) => {
   return (
     <Template pathname={path} pageTitle="My Lots">
       <p>My Lots Page</p>
-      <div className={css.lots_flexbox}>
+        {/*переписать набросок на компоненты и т.д.*/}
         {/*
           lots.map(({lots}) => (
             <div key={lots.id} className={css.lot}>
@@ -32,7 +32,7 @@ const MyLots = ({ path, lots }) => {
             </div>
           ))
         */}
-      </div>
+
     </Template>
   );
 };
