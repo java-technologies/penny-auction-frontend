@@ -30,6 +30,7 @@ module.exports = withSass({
   exportPathMap: () => (
     {
       '/': { page: '/' },
+      '/auction': { page: '/auction' },
     }
   ),
 });

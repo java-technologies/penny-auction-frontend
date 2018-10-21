@@ -9,17 +9,17 @@ class Navigation extends Component {
     this.state = {
       routes: [
         {
-          title: "link1",
-          href: '/link1',
-          as: '/link1',
+          title: "Auction",
+          href: '/auction',
+          as: '/auction',
         },
         {
-          title: 'link2',
-          href: '/link2',
-          as: '/link2',
+          title: 'My Lots',
+          href: '/my-lots',
+          as: '/myLots',
         },
       ],
-      loginBtn: {
+      account: {
         href: '/log-in',
         title: 'log in',
       },
@@ -31,9 +31,9 @@ class Navigation extends Component {
   isLogin() {
     if (this.props.isLogin) {
       this.setState({
-        loginBtn: {
-          title: this.state.loginBtn.title = 'Hello, Somebody!',
-          href: '/dashboard',
+        account: {
+          title: this.state.account.title = `${this.props.name}`,
+          href: '/my-account',
         },
       });
     }
@@ -51,7 +51,6 @@ class Navigation extends Component {
     return (
       <div
         className={css.header_navigation}
-        data-collapsed={this.props.collapsed}
         data-login={this.props.isLogin}
       >
         <nav className={css.navigation}>
@@ -59,6 +58,11 @@ class Navigation extends Component {
             {listItems}
           </ul>
         </nav>
+        <Link href={this.state.account.href}>
+          <button className={css.login}>
+            <span>{this.state.account.title}</span>
+          </button>
+        </Link>
       </div>
     );
   }
@@ -66,8 +70,8 @@ class Navigation extends Component {
 
 Navigation.propTypes = {
   pathname: PropTypes.string.isRequired,
-  collapsed: PropTypes.bool.isRequired,
   isLogin: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default Navigation;
