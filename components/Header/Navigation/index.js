@@ -15,7 +15,7 @@ class Navigation extends Component {
         },
         {
           title: 'My Lots',
-          href: '/my-lots',
+          href: '/myLots',
           as: '/myLots',
         },
       ],

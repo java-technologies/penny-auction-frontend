@@ -31,6 +31,8 @@ module.exports = withSass({
     {
       '/': { page: '/' },
       '/auction': { page: '/auction' },
+      '/myLots': { page: '/myLots' },
+
     }
   ),
 });
