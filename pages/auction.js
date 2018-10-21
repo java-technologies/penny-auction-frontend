@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'next/router';
 import Template from '../components/Template';
 import store from '../components/stores';
+import LotItem from "../components/LotItem";
+import css from "../components/LotItem/LotItem.scss";
+import LotList from "../components/LotList";
 
 const Auction = ({ path }) => {
   const content = store(path);
   return (
     <Template pathname={path} pageTitle="Auction">
-      <p>Auction Page</p>
+        <LotList/>
     </Template>
   );
 };
