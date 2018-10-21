@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../Header';
 import Footer from '../Footer';
+import css from './Template.scss';
 
 class Template extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Template extends Component {
 
   render() {
     return (
-      <div>
+      <div className={css.content}>
         <Header pathname={this.props.pathname} pageTitle={this.props.pageTitle} />
         {this.props.children}
         <Footer />

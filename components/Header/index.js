@@ -10,26 +10,21 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mobileToggler: false,
-      isLogin: false,
+      isLogin: true,
+      name: 'Admin',
     };
-    this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
   }
   componentWillMount() {
-    this.isLogin();
+    this.isntLoggedin();
   }
-  isLogin() {
+  isntLoggedin() {
     const token = null;
+    //заглушка для логаута
     if (token !== undefined && token !== null && token !== '') {
       this.setState(prevState => ({
         isLogin: !prevState.isLogin,
       }));
     }
-  }
-  toggleMobileMenu() {
-    this.setState(prevState => ({
-      mobileToggler: !prevState.mobileToggler,
-    }));
   }
 
   render() {
@@ -39,11 +34,16 @@ class Header extends Component {
           <title>{this.props.pageTitle}</title>
         </Head>
         <header className={css.header}>
-          <Navigation
-            pathname={this.props.pathname}
-            collapsed={this.state.mobileToggler}
-            isLogin={this.state.isLogin}
-          />
+          <div className={css.inner_header_wrapper}>
+            <div className={css.logo}>
+              <Link href="/"><span>Home</span></Link>
+            </div>
+            <Navigation
+              pathname={this.props.pathname}
+              isLogin={this.state.isLogin}
+              name={this.state.name}
+            />
+          </div>
         </header>
       </div>
     );
