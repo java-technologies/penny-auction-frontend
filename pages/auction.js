@@ -8,10 +8,10 @@ import css from "../components/LotItem/LotItem.scss";
 import LotList from "../components/LotList";
 
 const Auction = ({ path }) => {
-  const content = store(path);
+  const items= store(path);
   return (
     <Template pathname={path} pageTitle="Auction">
-        <LotList/>
+        <LotList items={items}/>
     </Template>
   );
 };

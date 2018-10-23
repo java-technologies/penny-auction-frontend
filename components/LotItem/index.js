@@ -15,20 +15,31 @@ class LotItem extends Component {
         return (
             <div className={css.item}>
                 <div className={css.image}>
+                    <img className={css.image} src={this.props.item.img}/>
                 </div>
-                <div className={css.itemheader}>
-                    Lot Item name
-                    <span className={css.price}> 200$ </span>
+                <div className={css.item_header}>
+                    {this.props.item.product.name}
+                    <span className={css.price}>
+                        {this.props.item.final_price}$
+                        <div className={css.start_price}>
+                            {this.props.item.start_price}$
+                        </div>
+                    </span>
                 </div>
-                <div className={css.itemdesc}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid atque cum debitis dignissimos enim fuga minus nobis, nulla quibusdam quis, recusandae rerum saepe suscipit voluptas voluptatum. Dolorum modi necessitatibus non.
+                <div >
+                    <span className={css.tag}>
+                    {this.props.item.product.category.name}
+                    </span>
+                </div>
+                <div className={css.description}>
+                    {this.props.item.product.description}
                 </div>
             </div>
         );
     }
 }
 LotItem.propTypes = {
-    content: PropTypes.objectOf(PropTypes.array).isRequired,
+    item: PropTypes.object.isRequired,
 };
 
 export default LotItem;

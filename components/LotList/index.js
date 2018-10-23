@@ -9,23 +9,27 @@ class LotList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
         };
     }
     render() {
         return (
                 <div className={css.items}>
-                    <LotItem className={css.item}/>
-                    <LotItem className={css.item}/>
-                    <LotItem className={css.item}/>
-                    <LotItem className={css.item}/>
-                    <LotItem className={css.item}/>
+                    {/*<LotItem className={css.item}/>*/}
+                    {/*<LotItem className={css.item}/>*/}
+                    {/*<LotItem className={css.item}/>*/}
+                    {/*<LotItem className={css.item}/>*/}
+                    {/*<LotItem className={css.item}/>*/}
+                    {
+                        this.props.items.map(function(x) {
+                            return <LotItem item={x} className={css.item}/>
+                        })
+                    }
                 </div>
         );
     }
 }
 LotList.propTypes = {
-    content: PropTypes.objectOf(PropTypes.array).isRequired,
+    items: PropTypes.objectOf(PropTypes.array).isRequired,
 };
 
 export default LotList;
