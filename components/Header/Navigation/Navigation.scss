@@ -1,4 +1,5 @@
 .header_navigation {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
   display: flex;
   .navigation {
     ul {
@@ -10,10 +11,11 @@
         font-weight: 500;
         span, a {
           text-decoration: none;
-          color: #000;
-          font-family: 'Montserrat';
           font-size: 16px;
           cursor: pointer;
+          &:hover {
+            color: #DF4B30;
+          }
         }
       }
     }
@@ -27,11 +29,13 @@
       border: 2px solid #DF4B30;
       margin: auto;
       span{
-        font-family: 'Montserrat';
         font-size: 16px;
         font-weight: 500;
         line-height: 19px;
-        color: white;
+        color: #292a2b;
+        &:hover {
+          color: #fff;
+        }
       }
     }
 }

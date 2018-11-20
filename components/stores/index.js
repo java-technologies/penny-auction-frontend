@@ -1,9 +1,11 @@
 import home from './pages/Home';
+import auction from './pages/Auction';
 
 class Content {
   constructor() {
     this.pages = {
       '/': home,
+      '/auction': auction,
     };
   }
   contentFilter(pathname) {

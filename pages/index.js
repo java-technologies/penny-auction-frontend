@@ -4,6 +4,7 @@ import { withRouter } from 'next/router';
 import Template from '../components/Template';
 import FirstScreen from '../components/Home/FirstScreen';
 import store from '../components/stores';
+import LotItem from '../components/LotItem'
 
 const Home = ({ path }) => {
   const content = store(path);
