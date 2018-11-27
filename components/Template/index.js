@@ -11,6 +11,7 @@ class Template extends Component {
   }
 
   render() {
+    console.log(this.props.pathname)
     return (
       <div className={css.content}>
         <Header pathname={this.props.pathname} pageTitle={this.props.pageTitle} />
