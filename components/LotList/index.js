@@ -4,6 +4,7 @@ import { withRouter } from 'next/router';
 import css from './LotList.scss';
 import PropTypes from "prop-types";
 import LotItem from "../LotItem";
+import LotItemTest from "../LotItemTest";
 import fetch from 'isomorphic-unfetch'
 
 class LotList extends Component {
@@ -15,11 +16,26 @@ class LotList extends Component {
   render () {
     return (
         <div className={css.items}>
-            {
-                this.props.items.map(function(x) {
-                    return <LotItem item={x} className={css.item}/>
-                })
-            }
+            <div className={css.flex_column}>
+              <span>Main items</span>
+              <div className={css.flex_row}>
+              {
+                  this.props.items.map(function(x) {
+                      return <LotItem item={x} className={css.item}/>
+                  })
+              }
+              </div>
+            </div>
+            <div className={css.flex_column}>
+              <span>Test items</span>
+              <div className={css.flex_row}>
+              {
+                  this.props.test_items.map(function(x) {
+                      return <LotItemTest item={x} className={css.item}/>
+                  })
+              }
+              </div>
+            </div>
         </div>
     );
   }

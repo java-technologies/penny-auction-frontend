@@ -9,23 +9,24 @@ import fetch from 'isomorphic-unfetch'
 import LotList from "../components/LotList";
 
 const Auction = (props) => {
+  const test_items= store(props.path);
   return (
     <Template pageTitle="Auction">
-        <LotList items={props.items}/>
+        <LotList items={props.items} test_items={test_items}/>
     </Template>
   );
 };
 // Auction.getInitialProps = async ({ pathname }) => ({ path: pathname });
-Auction.getInitialProps = async function() {
-    const res = await fetch('http://localhost:8080/lots', {
+Auction.getInitialProps = async function({ pathname }) {
+    const res = await fetch('http://app.penny-auction.cf/api/lots', {
         headers: {
-            "Access-Token":"eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.MejLezWY6hjGgbIXkq6Qbvx_-q5vWaTR6qPiNHphvla-XaZD3up1DN6Ib5AEOVtuB3fC9l-0L36noK4qQA79lhpSK3gozXO6XPIcCp4C8MU_ACzGtYe7IwGnnK3Emr6IHQE0bpGinHX1Ak1pAuwJNawaQ6Nvmz2ozZPsyxmiwoo"
+            "Cookie":"keycloak.penny-auction-ui.session=lmfdcWkropehU6axOw7pVhXOQaR0W2_wLgkw1y9r"
         },
     });
     const data = await res.json();
-    return {
-        items: data
-    }
+    return ({
+        items: data, path: pathname,
+    })
 };
 
 export default withRouter(Auction);
