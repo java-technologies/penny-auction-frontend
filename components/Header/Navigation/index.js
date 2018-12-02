@@ -14,6 +14,11 @@ class Navigation extends Component {
           as: '/auction',
         },
         {
+          title: "Lot creation",
+          href: '/lot_creation',
+          as: '/lot_creation',
+        },
+        {
           title: 'My Lots',
           href: '/my-lots',
           as: '/myLots',
