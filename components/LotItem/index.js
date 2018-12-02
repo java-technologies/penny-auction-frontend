@@ -18,7 +18,7 @@ class LotItem extends Component {
                     <img className={css.image} src={this.props.item.img}/>
                 </div>
                 <div className={css.item_header}>
-                    {this.props.item.product.name}
+                    {this.props.item.product_name}
                     <span className={css.price}>
                         {this.props.item.final_price}$
                         <div className={css.start_price}>
@@ -28,11 +28,11 @@ class LotItem extends Component {
                 </div>
                 <div >
                     <span className={css.tag}>
-                    {this.props.item.product.category.name}
+                    {this.props.item.category.name}
                     </span>
                 </div>
                 <div className={css.description}>
-                    {this.props.item.product.description}
+                    {this.props.item.product_description}
                 </div>
             </div>
         );

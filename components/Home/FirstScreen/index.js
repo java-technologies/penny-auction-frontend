@@ -11,13 +11,15 @@ class FirstScreen extends Component {
   }
   render() {
     return (
-      <div className={css.first_screen}>
-        <h2>header from template with links is above the main block</h2>
-        <h1>First Screen</h1>
-        <p id="uniqueId1">{this.props.content.title[0]}</p>
-        <p id="uniqueId2">{this.props.content.title[1]}</p>
-        <h2>footer from template with some info is under the main block</h2>
-      </div>
+        <div className={css.hero}>
+            <div className={css.heroimg}>
+                {/*<img src="https://images.unsplash.com/photo-1511344506912-a2a2d4916354?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=92498ef1b05f6d75d1b6463d70151ff7&auto=format&fit=crop&w=1500&q=80" alt="Pixel Skincare"/>*/}
+            </div>
+            <div className={css.herotext}>
+                <h1>Auctions<br/> Made simple</h1>
+            <a href="/auction" className={css.btn}>Explore</a>
+        </div>
+  </div>
     );
   }
 }

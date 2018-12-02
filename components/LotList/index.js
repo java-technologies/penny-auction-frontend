@@ -13,20 +13,14 @@ class LotList extends Component {
     };
   }
   render () {
-    console.log(this.props.data);
     return (
-      <div>
-        <h1>Batman TV Shows</h1>
-        <ul>
-          {this.props.data.map((data) => (
-            <li key={data.show.id}>
-              <Link as={`/p/${data.show.id}`} href={`/post?id=${data.show.id}`}>
-                <a>{data.show.name}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+        <div className={css.items}>
+            {
+                this.props.items.map(function(x) {
+                    return <LotItem item={x} className={css.item}/>
+                })
+            }
+        </div>
     );
   }
 }
