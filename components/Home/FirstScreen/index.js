@@ -17,7 +17,7 @@ class FirstScreen extends Component {
             </div>
             <div className={css.herotext}>
                 <h1>Auctions<br/> Made simple</h1>
-            <a href="/auction" className={css.btn}>Explore</a>
+            <a href="/login" className={css.btn}>Explore</a>
         </div>
   </div>
     );

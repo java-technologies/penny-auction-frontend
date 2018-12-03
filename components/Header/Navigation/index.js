@@ -7,6 +7,7 @@ class Navigation extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      authenticated: false,
       routes: [
         {
           title: "Auction",
@@ -30,17 +31,11 @@ class Navigation extends Component {
       },
     };
   }
-  componentWillMount() {
-    this.isLogin();
-  }
-  isLogin() {
-    if (this.props.isLogin) {
-      this.setState({
-        account: {
-          title: this.state.account.title = `${this.props.name}`,
-          href: '/my-account',
-        },
-      });
+  componentDidMount() {
+      if (localStorage.getItem('penny-auction-token')) {
+          this.setState({
+              authenticated: true
+          });
     }
   }
   render() {
@@ -53,10 +48,10 @@ class Navigation extends Component {
           </span>
         </Link>
       </li>));
-    return (
+    if (this.state.authenticated) return (
       <div
         className={css.header_navigation}
-        data-login={this.props.isLogin}
+        data-login={this.state.authenticated}
       >
         <nav className={css.navigation}>
           <ul className="menu">
@@ -69,7 +64,10 @@ class Navigation extends Component {
           </button>
         </Link>
       </div>
-    );
+    ); else return (<div
+        className={css.header_navigation}
+        data-login={this.state.authenticated}
+    />)
   }
 }
 

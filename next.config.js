@@ -32,6 +32,7 @@ module.exports = withSass({
       '/': { page: '/' },
       '/auction': { page: '/auction' },
       '/lot_creation': { page: '/lot_creation' },
+      '/login': { page: '/login' }
     }
   ),
 });
