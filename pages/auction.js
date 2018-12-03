@@ -8,13 +8,13 @@ import LotList from "../components/LotList";
 class Auction extends Component {
     constructor(props) {
         super(props);
-        const test_items = store(props.path);
         this.state = {
             token: ''
         };
     }
 
     async componentDidMount() {
+      console.log(this.props.path)
         let token = localStorage.getItem('penny-auction-token');
         if (token) {
             this.setState({token: token});
@@ -27,7 +27,8 @@ class Auction extends Component {
         console.log('hello'); //не виводиться НІКАДА (((((
         const res = await fetch('http://app.penny-auction.cf/api/lots', {
             headers: {
-                Authorization:  localStorage.getItem('penny-auction-token')
+                Cookie:"keycloak.penny-auction-ui.session=7Cea-q8K03lP0xRtBrbUBtGAItKxCcM_KqcoH4aO",
+                //Authorization:  localStorage.getItem('penny-auction-token')
             },
         });
         const data = await res.json();
@@ -38,9 +39,10 @@ class Auction extends Component {
     }
 
     render() {
+        const test_items = store(this.props.path);
         if (this.state.token) return (
             <Template pageTitle="Auction">
-                <LotList items={this.props.items} test_items={this.test_items}/>
+                <LotList items={this.props.items} test_items={test_items}/>
             </Template>
         ); else return (<div>Unable to authenticate!</div>)
     }
