@@ -14,28 +14,12 @@ class Auction extends Component {
     }
 
     async componentDidMount() {
-      console.log(this.props.path)
         let token = localStorage.getItem('penny-auction-token');
         if (token) {
             this.setState({token: token});
         } else {
             Router.push('/');
         }
-    }
-
-    static async getInitialProps({pathname}) {
-        console.log('hello'); //не виводиться НІКАДА (((((
-        const res = await fetch('http://app.penny-auction.cf/api/lots', {
-            headers: {
-                Cookie:"keycloak.penny-auction-ui.session=7Cea-q8K03lP0xRtBrbUBtGAItKxCcM_KqcoH4aO",
-                //Authorization:  localStorage.getItem('penny-auction-token')
-            },
-        });
-        const data = await res.json();
-        console.log(data);
-        return ({
-            items: data, path: pathname,
-        })
     }
 
     render() {
@@ -47,6 +31,20 @@ class Auction extends Component {
         ); else return (<div>Unable to authenticate!</div>)
     }
 
+}
+Auction.getInitialProps = async function(context) {
+    console.log(context.req.rawHeaders[19].split('=')[1]);
+    const res = await fetch('http://app.penny-auction.cf/api/lots', {
+        headers: {
+            Authorization: context.req.rawHeaders[19].split('=')[1],
+            "Cookie":"keycloak.penny-auction-ui.session=7Cea-q8K03lP0xRtBrbUBtGAItKxCcM_KqcoH4aO"
+        },
+    });
+    const data = await res.json();
+    console.log(data);
+    return ({
+        items: data, path: context.pathname,
+    })
 }
 
 

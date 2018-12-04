@@ -28,7 +28,7 @@ class Login extends Component {
             }).success(authenticated => {
                 this.setState({keycloak: keycloak, authenticated: authenticated});
                 localStorage.setItem('penny-auction-token', keycloak.token);
-                Router.push('/auction');
+                window.location.href=`/auction#${keycloak.token}`;
             })
         }
     }
