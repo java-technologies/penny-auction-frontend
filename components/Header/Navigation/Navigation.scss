@@ -1,0 +1,41 @@
+.header_navigation {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
+  display: flex;
+  .navigation {
+    ul {
+      display: flex;
+      list-style-type: none;
+      li {
+        margin-right: 35px;
+        text-transform: capitalize;
+        font-weight: 500;
+        span, a {
+          text-decoration: none;
+          font-size: 16px;
+          cursor: pointer;
+          &:hover {
+            color: #DF4B30;
+          }
+        }
+      }
+    }
+  }
+  .login {
+    cursor: pointer;
+      width: 125px;
+      height: 40px;
+      border-radius: 20px;
+      background-color: #DF4B30;
+      border: 2px solid #DF4B30;
+      margin: auto;
+      span{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+        color: #292a2b;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+}

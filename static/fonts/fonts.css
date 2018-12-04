@@ -1,0 +1,54 @@
+
+@font-face {
+  font-family: 'Montserrat';
+  src:  url('./Montserrat-Bold/Montserrat-Bold.eot?wg8r5d');
+  src:  url('./Montserrat-Bold/Montserrat-Bold.eot?wg8r5d#iefix') format('embedded-opentype'),
+    url('./Montserrat-Bold/Montserrat-Bold.ttf?wg8r5d') format('truetype'),
+    url('./Montserrat-Bold/Montserrat-Bold.woff?wg8r5d') format('woff'),
+    url('./Montserrat-Bold/Montserrat-Bold.svg?wg8r5d#umy-font') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:  url('./Montserrat-SemiBold/Montserrat-SemiBold.eot?wg8r5d');
+  src:  url('./Montserrat-SemiBold/Montserrat-SemiBold.eot?wg8r5d#iefix') format('embedded-opentype'),
+    url('./Montserrat-SemiBold/Montserrat-SemiBold.ttf?wg8r5d') format('truetype'),
+    url('./Montserrat-SemiBold/Montserrat-SemiBold.woff?wg8r5d') format('woff'),
+    url('./Montserrat-SemiBold/Montserrat-SemiBold.svg?wg8r5d#umy-font') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:  url('./Montserrat-Regular/Montserrat-Regular.eot?wg8r5d');
+  src:  url('./Montserrat-Regular/Montserrat-Regular.eot?wg8r5d#iefix') format('embedded-opentype'),
+  url('./Montserrat-Regular/Montserrat-Regular.ttf?wg8r5d') format('truetype'),
+  url('./Montserrat-Regular/Montserrat-Regular.woff?wg8r5d') format('woff'),
+  url('./Montserrat-Regular/Montserrat-Regular.svg?wg8r5d#umy-font') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:  url('./Montserrat-Light/Montserrat-Light.eot?wg8r5d');
+  src:  url('./Montserrat-Light/Montserrat-Light.eot?wg8r5d#iefix') format('embedded-opentype'),
+    url('./Montserrat-Light/Montserrat-Light.ttf?wg8r5d') format('truetype'),
+    url('./Montserrat-Light/Montserrat-Light.woff?wg8r5d') format('woff'),
+    url('./Montserrat-Light/Montserrat-Light.svg?wg8r5d#umy-font') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MontserratMedium';
+  src:  url('./Monserrat-Medium/Montserrat-Medium.eot?wg8r5d');
+  src:  url('./Monserrat-Medium/Montserrat-Medium.eot?wg8r5d#iefix') format('embedded-opentype'),
+    url('./Monserrat-Medium/Montserrat-Medium.ttf?wg8r5d') format('truetype'),
+    url('./Monserrat-Medium/Montserrat-Medium.woff?wg8r5d') format('woff'),
+    url('./Monserrat-Medium/Montserrat-Medium.svg?wg8r5d#umy-font') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}

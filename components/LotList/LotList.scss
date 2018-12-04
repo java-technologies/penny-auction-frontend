@@ -1,0 +1,14 @@
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  .flex_column{
+    display: flex;
+    flex-direction: column;
+    .flex_row{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+}
